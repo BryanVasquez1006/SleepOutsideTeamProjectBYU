@@ -31,6 +31,8 @@ export default class ProductDetails {
 
     renderProductDetails() {
         const detailsSection = document.querySelector(".product-detail");
+        const finalPrice = this.product.FinalPrice;
+        const suggestedRetailPrice = this.product.suggestedRetailPrice;
         const template = `
             <h3>${this.product.Brand.Name}</h3>
             <h2 class="divider">${this.product.NameWithoutBrand}</h2>
@@ -40,6 +42,7 @@ export default class ProductDetails {
                 alt="${this.product.NameWithoutBrand}"
             />
             <p class="product-card__price">$${this.product.FinalPrice}</p>
+            <div class="has-discount no-discount">${finalPrice < suggestedRetailPrice ? a  : this.product.SuggestedRetailPrice - this.product.FinalPrice}<div>
 
             <p class="product__color">${this.product.Colors[0].ColorName}</p>
 
