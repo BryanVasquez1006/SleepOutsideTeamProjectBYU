@@ -30,15 +30,16 @@ export default class ProductDetails {
 
 
     renderProductDetails() {
+        const a = 1
         const detailsSection = document.querySelector(".product-detail");
         const finalPrice = this.product.FinalPrice;
-        const suggestedRetailPrice = this.product.suggestedRetailPrice;
+        const suggestedRetailPrice = this.product.SuggestedRetailPrice;
         const template = `
             <h3>${this.product.Brand.Name}</h3>
             <h2 class="divider">${this.product.NameWithoutBrand}</h2>
             <img
                 class="divider"
-                src="${this.product.Image}"
+                src="${this.product.Images.PrimaryLarge}"
                 alt="${this.product.NameWithoutBrand}"
             />
             <p class="product-card__price">$${this.product.FinalPrice}</p>
