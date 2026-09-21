@@ -40,3 +40,34 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
   
 }
+
+export function renderWithTemplate(template, parentElement, data, callback) {
+  
+  //Inserting the template into the parent element
+  parentElement.innerHTML = template;
+
+  if(callback) {
+    callback(data);
+  };
+}
+
+export async function loadTemplate(path) {
+  const response = await fetch(path);
+  
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  const templateToText = await response.text();
+  return templateToText;
+}
+
+
+export async function loadHeaderFooter() {
+  const headerTemplate = await loadTemplate("/partials/header.html");
+  const footerTemplate = await loadTemplate("/partials/footer.html")
+  const footerParent = qs("#footer-index");
+  const headerParent = qs("#header-index");
+  renderWithTemplate(headerTemplate, headerParent)
+  renderWithTemplate(footerTemplate, footerParent);
+
+}
