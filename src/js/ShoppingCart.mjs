@@ -1,4 +1,5 @@
 import { getLocalStorage, renderListWithTemplate } from "./utils.mjs";
+import CheckoutProcess from "./CheckoutProcess.mjs";
 
 export default class ShoppingCart {
     constructor(parentElement) {
@@ -8,10 +9,13 @@ export default class ShoppingCart {
     init() {
         const cartItems = getLocalStorage("so-cart") ?? [];
         this.renderList(cartItems);
+        getCartTotal();
+        
     };
 
     renderList(cartList) {
         renderListWithTemplate(cartItemTemplate, this.parentElement, cartList);
+        
     };
 }
 
@@ -32,4 +36,24 @@ function cartItemTemplate(item) {
 </li>`;
 
   return newItem;
+}
+
+//Calculate Cart Price
+function getCartTotal() {
+  const cartTotalEl = document.querySelector(".total");
+  const cartItems = getLocalStorage("so-cart") ?? [];
+  
+  
+  if(cartTotalEl) {
+    let total = 0;
+    cartItems.forEach(item => {
+       total += Number(item.FinalPrice);
+       //checking if there are items in the cart, if there are then display price, otherwise hide it.
+      });
+
+   if(cartItems.length > 0) {
+   cartTotalEl.innerHTML = `Total: ${total}`;
+   cartTotalEl.classList.add("show");
+  };
+  };
 }
