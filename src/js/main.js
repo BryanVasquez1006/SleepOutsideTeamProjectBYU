@@ -1,8 +1,8 @@
-import ProductData from "./ProductData.mjs";
+import ExternalServices from "./ExternalServices.mjs";
 import ProductList from "./ProductList.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
 
-const productData = new ProductData("tents");
+const productData = new ExternalServices("tents");
 
 const ulProductList = document.querySelector(".product-list");
 

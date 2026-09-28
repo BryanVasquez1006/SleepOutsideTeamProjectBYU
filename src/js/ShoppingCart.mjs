@@ -9,6 +9,7 @@ export default class ShoppingCart {
     init() {
         const cartItems = getLocalStorage("so-cart") ?? [];
         this.renderList(cartItems);
+        console.log("CART ITEMS:", cartItems);
         getCartTotal();
         
     };
@@ -23,7 +24,7 @@ function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
-      src="${item.Image}"
+      src="${item.Images.PrimaryMedium}"
       alt="${item.Name}"
     />
   </a>
@@ -35,6 +36,7 @@ function cartItemTemplate(item) {
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
 
+console.log("CART ITEM:", item);
   return newItem;
 }
 

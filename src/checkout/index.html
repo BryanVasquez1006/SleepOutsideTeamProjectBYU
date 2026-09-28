@@ -64,28 +64,28 @@
 
       <div class="grid-container">
         <section class="form-container">
-          <form action="#">
+          <form action="#" id="checkout-form">
             <div>
               <p>Customer Information</p>
             </div>
             <div>
               <label for="Fname">First Name:</label>
-              <input type="text" id="Fname" name="cx-Fname" required />
+              <input type="text" id="Fname" name="fname" required />
               <label for="Lname">Last Name:</label>
-              <input type="text" id="Lname" name="cx-Lname" required />
+              <input type="text" id="Lname" name="lname" required />
             </div>
             <div>
               <div>
                 <p>Address Information</p>
               </div>
               <label for="street">Street Address</label>
-              <input type="text" id="street" name="cx-street" required />
+              <input type="text" id="street" name="street" required />
               <label for="city">City</label>
-              <input type="text" id="city" name="cx-city" required />
+              <input type="text" id="city" name="city" required />
               <label for="state">State</label>
-              <input type="text" id="state" name="cx-state" required />
-              <label for="Lname">Zip Code</label>
-              <input type="text" id="zipcode" name="cx-zipcode" required />
+              <input type="text" id="state" name="state" required />
+              <label for="zipcode">Zip Code</label>
+              <input type="text" id="zipcode" name="zip" required />
             </div>
             <div>
               <div>
@@ -95,9 +95,9 @@
               <input
                 type="text"
                 id="card"
-                name="cx-cardnumber"
+                name="cardNumber"
                 inputmode="numeric"
-                pattern=" \d{13,19}"
+                pattern="\d{13,19}"
                 placeholder="xxxx xxxx xxxx xxxx"
                 required
               />
@@ -105,7 +105,7 @@
               <input
                 type="text"
                 id="expiry"
-                name="cx-card-expiry"
+                name="expiration"
                 inputmode="numeric"
                 autocomplete="cc-exp"
                 pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
@@ -113,10 +113,8 @@
                 placeholder="MM/AA"
                 required
               />
-              <label for="state">State</label>
-              <input type="text" id="state" name="cx-state" required />
-              <label for="Lname">Zip Code</label>
-              <input type="text" id="zipcode" name="cx-zipcode" required />
+              <label for="security-code">Security Code</label>
+              <input type="text" id="security-code" name="code" required />
             </div>
             <button id="make-paymentbtn" type="submit">Make a Payment</button>
           </form>
