@@ -261,3 +261,106 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.total {
+  display: none;
+}
+
+.total.show {
+  display: block;
+}
+
+.cart-checkout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+
+  & a {
+    text-decoration: none;
+    color: white;
+    background-color: #8a470c;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.4s ease;
+    &:hover {
+      background-color: #be712d;
+    }
+  }
+}
+
+form {
+  display: grid;
+  flex-direction: column;
+  max-width: 75%;
+  gap: 6px;
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    background-color: #d0d0d0;
+    grid-template-rows: 1fr;
+    padding: 5px;
+  }
+  & input {
+    padding: 5px;
+    border-radius: 3px;
+    border-color: gray;
+    max-width: 75%;
+  }
+
+  & p {
+    font-weight: 600;
+    font-size: 25px;
+  }
+
+  & label {
+    margin-top: 10px;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.checkout-summary {
+  background-color: #d0d0d0;
+  border-radius: 10px;
+}
+
+#state {
+  max-width: 25ch;
+}
+
+#security-code {
+  max-width: 15ch;
+}
+
+#expiry {
+  max-width: 10ch;
+}
+
+#state {
+  max-width: 15ch;
+}
+#card {
+  max-width: 30ch;
+}
+#make-paymentbtn {
+  background-color: #8a470c;
+  transition: background-color 0.4s ease;
+  &:hover {
+    background-color: #be712d;
+  }
+}
