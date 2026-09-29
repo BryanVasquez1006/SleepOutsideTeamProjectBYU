@@ -339,6 +339,11 @@ form {
   border-radius: 10px;
 }
 
+
+.hide {
+  display:none;
+}
+
 #state {
   max-width: 25ch;
 }
@@ -364,3 +369,4 @@ form {
     background-color: #be712d;
   }
 }
+
