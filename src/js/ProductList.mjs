@@ -1,5 +1,7 @@
 //This purpose of this script will be to generate a list of product cards in HTML from an array.
 import { renderListWithTemplate } from "./utils.mjs";
+const productDiscountElement = document.querySelector(".product-discount");
+
 
 function productCardTemplate(product) {
     const cardTemplate = `
@@ -12,6 +14,8 @@ function productCardTemplate(product) {
                   <h3 class="card__brand">${product.Brand.Name}</h3>
                   <h2 class="card__name">${product.NameWithoutBrand}</h2>
                   <p class="product-card__price">$${product.FinalPrice}</p>
+                  <p class="product-discount ${product.FinalPrice < product.SuggestedRetailPrice ? "" : "hide"}">Product Discounted!</p>
+
                 </a>
           </li>
           `;
